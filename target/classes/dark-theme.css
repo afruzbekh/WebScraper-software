@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.root {
+    -fx-background-color: #2e2e2e;
+    -fx-font-size: 14px;
+}
+
+#root {
+    -fx-text-fill: white;
+    -fx-font-family: "Inter", sans-serif;
+}
+
+#scrapeButton {
+    -fx-cursor: hand;
+    -fx-background-color: #090a0c,
+    linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+    linear-gradient(#20262b, #191d22),
+    radial-gradient(
+        center 50% 0%,
+        radius 100%,
+        rgba(114, 131, 148, 0.9),
+        rgba(255, 255, 255, 0)
+    );
+    -fx-background-radius: 5, 4, 3, 5;
+    -fx-background-insets: 0, 1, 2, 0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0, 0, 1);
+    -fx-font-family: "Arial";
+    -fx-padding: 10 20 10 20;
+    -fx-opacity: 0.8;
+    -fx-visible: false; /* Hide by default */
+}
+
+#scrapeButton:hover {
+    -fx-opacity: 1;
+}
+
+#scrapeButton:pressed {
+    -fx-background-color: #444444;
+    -fx-text-fill: #ffcc00;
+}
+
+#pasteButton {
+    -fx-cursor: hand;
+    -fx-background-color: #444444;
+    -fx-text-fill: white;
+    -fx-border-color: #333333;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10px;
+}
+
+#pasteButton:hover {
+    -fx-background-color: #555555;
+}
+
+#pasteButton:pressed {
+    -fx-background-color: #666666;
+}
+
+#warningLabel {
+    -fx-text-fill: red;
+    -fx-font-size: 12px;
+    -fx-visible: false; /* Hide the warning label by default */
+}
+
+.text-field,
+.text-area {
+    -fx-background-color: #444444;
+    -fx-text-fill: white;
+    -fx-border-color: #333333;
+}
+
+.scroll-bar,
+.scroll-pane {
+    -fx-background-color: #333333;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #666666;
+}
+
+/* Custom scroll bar appearance for the ListView */
+.list-view {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+}
+
+.list-view .scroll-bar {
+    -fx-background-color: #666666;
+}
+
+.list-view .scroll-bar .thumb {
+    -fx-background-color: #888888;
+}

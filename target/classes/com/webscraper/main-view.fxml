@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.webscraper.PrimaryController">
+    <children>
+        <TextField fx:id="urlInput" layoutX="50" layoutY="50" prefWidth="580" promptText="Enter the URL to scrape" />
+        <Button fx:id="scrapeButton" text="Scrape Data" layoutX="600" layoutY="50" onAction="#onScrapeButtonClick" />
+        <ListView fx:id="dataList" layoutX="50" layoutY="100" prefHeight="300" prefWidth="660" />
+        <Label fx:id="warningLabel" layoutX="50" layoutY="80" textFill="red" visible="false" />
+    </children>
+</AnchorPane>
