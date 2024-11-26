@@ -43,19 +43,36 @@ public class PrimaryController {
         try {
             // Connect to the URL and parse the HTML
             Document doc = Jsoup.connect(url).get();
-
-            // Get the HTML of the page
-            String htmlContent = doc.html(); // You can adjust this if you want the text content or parts of the HTML
-
+    
+            // Use StringBuilder to accumulate links and paragraphs
+            StringBuilder links = new StringBuilder();
+            StringBuilder paragraphs = new StringBuilder();
+    
+            // Example of scraping all links from the page
+            // Get all links (anchor tags <a>)
+            doc.select("a[href]").forEach(element -> {
+                links.append(element.attr("href")).append("\n");  // Append the href attribute (URL)
+            });
+    
+            // Example of scraping all paragraphs
+            // Get all paragraph tags <p>
+            doc.select("p").forEach(element -> {
+                paragraphs.append(element.text()).append("\n");  // Append the text of the paragraph
+            });
+    
+            // Combine the scraped data into a string (you can format it as needed)
+            String scrapedData = "Links:\n" + links.toString() + "\n\n" + "Paragraphs:\n" + paragraphs.toString();
+    
             // Clear any previous data in the ListView
             dataList.getItems().clear();
-
-            // Show the whole HTML content as a simple string in the ListView (truncated for readability)
-            String truncatedHtml = htmlContent.length() > 500 ? htmlContent.substring(0, 500) + "..." : htmlContent;
-            dataList.getItems().add(truncatedHtml); // Show the truncated HTML in ListView
-
+    
+            // Show the scraped data in the ListView (truncated for readability)
+            String truncatedData = scrapedData.length() > 500 ? scrapedData.substring(0, 500) + "..." : scrapedData;
+            dataList.getItems().add(truncatedData);
+    
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    
 }
